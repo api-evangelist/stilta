@@ -1,0 +1,26 @@
+generated: '2026-07-21'
+method: searched
+source: probed /.well-known/ on stilta.com hosts (curl, 2026-07-21)
+hosts:
+- host: https://auth.stilta.com
+  documents:
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: stilta-openid-configuration.json
+    note: PropelAuth OpenID Connect discovery (issuer https://auth.stilta.com)
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+- host: https://www.stilta.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /llms.txt
+    status: 404
+  - path: /openapi.json
+    status: 404
+- host: https://api.stilta.com
+  documents:
+  - path: /openapi.json
+    status: 404
+  - path: /docs
+    status: 404

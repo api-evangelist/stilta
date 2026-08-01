@@ -1,0 +1,47 @@
+generated: '2026-07-21'
+method: searched
+source: https://auth.stilta.com/.well-known/openid-configuration
+docs: https://auth.stilta.com/en/login
+summary:
+  types:
+  - openIdConnect
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  pkce: S256
+  provider: PropelAuth
+  note: >-
+    OpenID Connect identity surface for the Stilta platform (SSO / user login),
+    not a documented developer API authorization surface. Discovered via the
+    published /.well-known/openid-configuration document.
+schemes:
+- name: OpenIDConnect
+  type: openIdConnect
+  issuer: https://auth.stilta.com
+  openIdConnectUrl: https://auth.stilta.com/.well-known/openid-configuration
+  sources:
+  - well-known/stilta-openid-configuration.json
+- name: OAuth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://auth.stilta.com/propelauth/oauth/authorize
+    tokenUrl: https://auth.stilta.com/propelauth/oauth/token
+    userinfoUrl: https://auth.stilta.com/propelauth/oauth/userinfo
+    jwksUri: https://auth.stilta.com/.well-known/jwks.json
+    codeChallengeMethods:
+    - S256
+    tokenEndpointAuthMethods:
+    - client_secret_basic
+    - client_secret_post
+    idTokenSigningAlg:
+    - RS256
+  sources:
+  - well-known/stilta-openid-configuration.json
+scopes:
+- scope: openid
+  description: OpenID Connect authentication
+- scope: email
+  description: Access to the user's email address
+- scope: profile
+  description: Access to the user's basic profile (first_name, last_name, picture_url)

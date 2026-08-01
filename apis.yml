@@ -1,23 +1,100 @@
 aid: stilta
 name: Stilta
-description: Stilta is a company surfaced as a portfolio company of a16z, y-combinator and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Stilta is an agentic AI platform for high-stakes patent and intellectual
+  property work, backed by a16z, NVIDIA, and Y Combinator (W26). Its agents
+  automate evidence gathering and analysis across 180M+ patents, scientific
+  literature, and archived web content to deliver source-cited invalidity
+  analysis, infringement analysis, and freedom-to-operate assessments for
+  in-house IP teams and intellectual property law firms. The platform markets
+  a defensible first answer in roughly seventeen minutes, fully autonomous,
+  with citations pulled from original documents. Stilta exposes a first-party
+  backend API (api.stilta.com, "Patrona Patent Search Platform API") and a
+  PropelAuth-based OpenID Connect identity surface at auth.stilta.com, but does
+  not publish public developer documentation, an OpenAPI specification, or SDKs
+  at this time. This profile was surfaced as an a16z / Y Combinator portfolio
+  company and enriched from Stilta's public web surface.
 url: https://raw.githubusercontent.com/api-evangelist/stilta/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
 - y-combinator
+- nvidia
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://www.stilta.com/favicon.ico
 tags:
 - Company
-apis: []
+- Patents
+- Intellectual Property
+- Legal Tech
+- Artificial Intelligence
+- Agentic AI
+- Patent Search
+- Prior Art
+apis:
+- name: Stilta Platform API
+  description: >-
+    First-party backend API for the Stilta / Patrona patent search platform.
+    Live and rate-limited (600 req window observed) but undocumented publicly —
+    no OpenAPI, no developer docs (docs_url is null; /openapi.json and /docs
+    return 404). Included for host coverage; not a published developer product.
+  humanURL: https://www.stilta.com
+  baseURL: https://api.stilta.com
+  x-documented: false
+  properties:
+  - type: WellKnown
+    url: well-known/stilta-well-known.yml
+  - type: Authentication
+    url: authentication/stilta-authentication.yml
+common:
+- type: TrustCenter
+  url: security/stilta-trust-center.yml
+- type: Compliance
+  url: https://trust.stilta.com/
+- type: DomainSecurity
+  url: security/stilta-domain-security.yml
+- type: Website
+  url: https://www.stilta.com
+- type: Login
+  url: https://auth.stilta.com/en/login
+- type: PrivacyPolicy
+  url: https://www.stilta.com/dpa/privacy-policy
+- type: TermsOfService
+  url: https://www.stilta.com/dpa/terms
+- type: Support
+  url: https://www.stilta.com/contact-us
+- type: Blog
+  url: https://www.stilta.com/news-page
+- type: Careers
+  url: https://www.stilta.com/careers
+- type: WellKnown
+  url: well-known/stilta-well-known.yml
+- type: Authentication
+  url: authentication/stilta-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 4
+  pass: local-v1
