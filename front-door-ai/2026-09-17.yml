@@ -1,0 +1,30 @@
+# Front Door AI Index — stilta — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: stilta
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.stilta.com
+  final_host: stilta.com
+  ownership: own
+  owner: stilta
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 32
+  host_score: 32
+  density: 13.55
+  words: 2361
+  tiers:
+    agentic: 4
+    core: 22
+    model: 6
+  ambiguous: 17
+  top_terms:
+    AI: 19
+    agent: 17
+    agentic: 4
+    ChatGPT: 3
+    Claude: 3
+    LLMs: 3
